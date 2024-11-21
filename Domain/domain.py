@@ -10,7 +10,10 @@ class Film:
         return f"ID: {self.film_id}, Title: {self.title}, Description: {self.description},\nGen: {self.genre}, Rating: {self.rating}"
 
     def __eq__(self, other):
-        return self.film_id == other.film_id
+        if self.film_id == other.film_id and self.title == other.title and self.description == other.description and self.genre == other.genre and self.rating == other.rating:
+            return True
+        return False
+
 
     def film_create(self):
         self.film_id = 0
@@ -73,4 +76,3 @@ class Rental:
 
     def __eq__(self, other):
         return self.rental_id == other.rental_id
-
